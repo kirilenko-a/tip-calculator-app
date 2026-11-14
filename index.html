@@ -14,13 +14,17 @@
     <script type="module" src="/src/main.js"></script>
     <title>Tip calculator app</title>
   </head>
-  <body class="font-main bg-grey-200 flex min-h-screen flex-col items-center">
-    <header class="pt-12.5 pb-10">
+  <body
+    class="font-main bg-grey-200 flex min-h-screen flex-col items-center justify-center md:gap-10 xl:gap-22"
+  >
+    <header class="pt-12.5 pb-10 md:pt-12.5 md:pb-0 xl:p-0">
       <img src="/images/logo.svg" alt="Splitter logo" />
     </header>
 
-    <main class="grid w-full gap-8 rounded-t-[25px] bg-white px-6 py-8.5">
-      <form id="form" class="flex flex-col gap-8">
+    <main
+      class="grid w-full flex-1 gap-8 rounded-t-[25px] bg-white px-6 py-8.5 md:max-w-152 md:flex-none md:gap-10 md:rounded-[25px] md:px-[75.5px] md:py-13.5 xl:max-w-230 xl:grid-cols-2 xl:gap-12 xl:px-10 xl:py-8"
+    >
+      <form id="form" class="flex flex-col gap-8 md:gap-6">
         <fieldset class="fieldset-flex">
           <label class="label" for="bill">Bill</label>
           <div class="input-wrapper before:bg-[url('/images/icon-dollar.svg')]">
@@ -115,7 +119,7 @@
       </form>
 
       <section
-        class="flex flex-col gap-8 rounded-[15px] bg-green-900 px-5.75 py-[29.5px]"
+        class="flex flex-col gap-8 rounded-[15px] bg-green-900 px-5.75 py-[29.5px] md:px-[47.5px] md:py-10.75 xl:justify-between xl:px-10 xl:py-[37.5px]"
       >
         <div class="flex flex-col gap-6">
           <div class="summary-wrapper">
