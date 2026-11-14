@@ -121,4 +121,9 @@
   font-size: 32px;
   font-weight: 700;
   color: var(--color-green-400);
+
+  @media (min-width: 768px) {
+    font-size: 48px;
+    line-height: 71px;
+  }
 }
