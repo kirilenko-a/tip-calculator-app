@@ -97,3 +97,28 @@
     appearance: none;
   }
 }
+
+@utility summary-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@utility text-amount-summary {
+  font-weight: 700;
+  color: var(--color-white);
+  line-height: 24px;
+}
+
+@utility text-per-person {
+  color: var(--color-grey-400);
+  font-size: 13px;
+  line-height: 19px;
+  font-weight: 700;
+}
+
+@utility amount-summary {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--color-green-400);
+}
