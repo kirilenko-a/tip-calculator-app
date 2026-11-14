@@ -35,35 +35,59 @@
         </fieldset>
 
         <fieldset class="fieldset-flex">
-          <label class="label" for="tip">Select Tip %</label>
+          <legend class="label">Select Tip %</legend>
 
           <ul class="grid grid-cols-2 gap-4" id="tip">
             <li>
-              <button class="tip-button tip-btn-hover" type="button">5%</button>
+              <button
+                class="tip-button tip-btn-hover"
+                type="button"
+                aria-pressed="false"
+              >
+                5%
+              </button>
             </li>
             <li>
-              <button class="tip-button tip-btn-hover" type="button">
+              <button
+                class="tip-button tip-btn-hover"
+                type="button"
+                aria-pressed="false"
+              >
                 10%
               </button>
             </li>
             <li>
-              <button class="tip-button tip-btn-hover" type="button">
+              <button
+                class="tip-button tip-btn-hover"
+                type="button"
+                aria-pressed="false"
+              >
                 15%
               </button>
             </li>
             <li>
-              <button class="tip-button tip-btn-hover" type="button">
+              <button
+                class="tip-button tip-btn-hover"
+                type="button"
+                aria-pressed="false"
+              >
                 25%
               </button>
             </li>
             <li>
-              <button class="tip-button tip-btn-hover" type="button">
+              <button
+                class="tip-button tip-btn-hover"
+                type="button"
+                aria-pressed="false"
+              >
                 50%
               </button>
             </li>
             <li>
               <input
                 type="number"
+                name="custom"
+                aria-label="Custom tip percentage"
                 placeholder="Custom"
                 class="custom-tip [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
               />
