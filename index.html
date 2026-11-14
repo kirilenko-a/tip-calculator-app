@@ -14,5 +14,30 @@
     <script type="module" src="/src/main.js"></script>
     <title>Tip calculator app</title>
   </head>
-  <body></body>
+  <body class="font-main bg-grey-200 flex min-h-screen flex-col items-center">
+    <header class="pt-12.5 pb-10">
+      <img src="/images/logo.svg" alt="Splitter logo" />
+    </header>
+
+    <main class="w-full rounded-t-[25px] bg-white px-6 py-8.5">
+      <form action="/" method="get">
+        <fieldset class="flex flex-col gap-2">
+          <label class="text-grey-500 leading-6 font-bold" for="bill"
+            >Bill</label
+          >
+          <div
+            class="relative before:absolute before:top-1/2 before:left-4.5 before:h-4 before:w-2.5 before:-translate-y-1/2 before:bg-[url('/images/icon-dollar.svg')] before:bg-contain before:bg-no-repeat before:content-['']"
+          >
+            <input
+              class="bg-grey-50 w-full rounded-[5px] px-4.5 py-1.5 text-right text-[24px] leading-9 font-bold text-green-900 outline-green-400 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+              type="number"
+              name="bill"
+              id="bill"
+              placeholder="0"
+            />
+          </div>
+        </fieldset>
+      </form>
+    </main>
+  </body>
 </html>
