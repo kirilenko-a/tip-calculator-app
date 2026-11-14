@@ -20,7 +20,7 @@
     </header>
 
     <main class="w-full rounded-t-[25px] bg-white px-6 py-8.5">
-      <form action="/" method="get">
+      <form action="/" method="get" class="flex flex-col gap-8">
         <fieldset class="flex flex-col gap-2">
           <label class="text-grey-500 leading-6 font-bold" for="bill"
             >Bill</label
@@ -33,6 +33,62 @@
               type="number"
               name="bill"
               id="bill"
+              placeholder="0"
+            />
+          </div>
+        </fieldset>
+
+        <fieldset class="flex flex-col gap-2">
+          <label class="text-grey-500 leading-6 font-bold" for="tip"
+            >Select Tip %</label
+          >
+
+          <ul class="grid grid-cols-2 gap-4" id="tip">
+            <li>
+              <button class="tip-button tip-btn-hover" type="button">5%</button>
+            </li>
+            <li>
+              <button class="tip-button tip-btn-hover" type="button">
+                10%
+              </button>
+            </li>
+            <li>
+              <button class="tip-button tip-btn-hover" type="button">
+                15%
+              </button>
+            </li>
+            <li>
+              <button class="tip-button tip-btn-hover" type="button">
+                25%
+              </button>
+            </li>
+            <li>
+              <button class="tip-button tip-btn-hover" type="button">
+                50%
+              </button>
+            </li>
+            <li>
+              <input
+                type="number"
+                placeholder="Custom"
+                class="custom-tip [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+              />
+            </li>
+          </ul>
+        </fieldset>
+
+        <fieldset class="flex flex-col gap-2">
+          <label class="text-grey-500 leading-6 font-bold" for="people-amount"
+            >Number of people</label
+          >
+          <div
+            class="relative before:absolute before:top-1/2 before:left-4.5 before:h-4 before:w-3.25 before:-translate-y-1/2 before:bg-[url('/images/icon-person.svg')] before:bg-contain before:bg-no-repeat before:content-['']"
+          >
+            <input
+              class="bg-grey-50 w-full rounded-[5px] px-4.5 py-1.5 text-right text-[24px] leading-9 font-bold text-green-900 outline-green-400 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+              type="number"
+              name="people-amount"
+              id="people-amount"
               placeholder="0"
             />
           </div>
