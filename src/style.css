@@ -49,7 +49,7 @@
   font-weight: 700;
   outline-color: var(--color-green-400);
   background-color: var(--color-grey-50);
-  color: var(--color-grey-550);
+  color: var(--color-grey-900);
 }
 
 @utility fieldset-flex {
