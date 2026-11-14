@@ -19,8 +19,8 @@
       <img src="/images/logo.svg" alt="Splitter logo" />
     </header>
 
-    <main class="w-full rounded-t-[25px] bg-white px-6 py-8.5">
-      <form action="/" method="get" class="flex flex-col gap-8">
+    <main class="grid w-full gap-8 rounded-t-[25px] bg-white px-6 py-8.5">
+      <form id="form" class="flex flex-col gap-8">
         <fieldset class="fieldset-flex">
           <label class="label" for="bill">Bill</label>
           <div class="input-wrapper before:bg-[url('/images/icon-dollar.svg')]">
@@ -35,7 +35,7 @@
         </fieldset>
 
         <fieldset class="fieldset-flex">
-          <legend class="label">Select Tip %</legend>
+          <legend class="label mb-2">Select Tip %</legend>
 
           <ul class="grid grid-cols-2 gap-4" id="tip">
             <li>
@@ -43,6 +43,7 @@
                 class="tip-button tip-btn-hover"
                 type="button"
                 aria-pressed="false"
+                value="5"
               >
                 5%
               </button>
@@ -52,6 +53,7 @@
                 class="tip-button tip-btn-hover"
                 type="button"
                 aria-pressed="false"
+                value="10"
               >
                 10%
               </button>
@@ -61,6 +63,7 @@
                 class="tip-button tip-btn-hover"
                 type="button"
                 aria-pressed="false"
+                value="15"
               >
                 15%
               </button>
@@ -70,6 +73,7 @@
                 class="tip-button tip-btn-hover"
                 type="button"
                 aria-pressed="false"
+                value="25"
               >
                 25%
               </button>
@@ -79,6 +83,7 @@
                 class="tip-button tip-btn-hover"
                 type="button"
                 aria-pressed="false"
+                value="50"
               >
                 50%
               </button>
@@ -108,6 +113,37 @@
           </div>
         </fieldset>
       </form>
+
+      <section
+        class="flex flex-col gap-8 rounded-[15px] bg-green-900 px-5.75 py-[29.5px]"
+      >
+        <div class="flex flex-col gap-6">
+          <div class="summary-wrapper">
+            <p class="flex flex-col">
+              <span class="text-amount-summary">Tip Amount</span>
+              <span class="text-per-person">/ person</span>
+            </p>
+            <p class="amount-summary">$0.00</p>
+          </div>
+
+          <div class="summary-wrapper">
+            <p class="flex flex-col">
+              <span class="text-amount-summary">Total</span>
+              <span class="text-per-person">/ person</span>
+            </p>
+            <p class="amount-summary">$0.00</p>
+          </div>
+        </div>
+
+        <button
+          type="reset"
+          form="form"
+          disabled
+          class="bg-green-750 w-full cursor-not-allowed rounded-[5px] py-2.25 font-bold text-green-800"
+        >
+          RESET
+        </button>
+      </section>
     </main>
   </body>
 </html>
