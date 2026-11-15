@@ -27,7 +27,12 @@
       >
         <form id="form" class="flex flex-col gap-8 md:gap-6">
           <fieldset class="fieldset-flex">
-            <label class="label" for="bill">Bill</label>
+            <div class="flex items-center justify-between">
+              <label class="label" for="bill">Bill</label>
+              <span id="bill-error" class="hidden text-[12px] text-orange-400"
+                >Can't be zero or less</span
+              >
+            </div>
             <div
               class="input-wrapper before:bg-[url('/images/icon-dollar.svg')]"
             >
@@ -37,6 +42,8 @@
                 name="bill"
                 id="bill"
                 placeholder="0"
+                aria-invalid="false"
+                aria-describedby="bill-error"
               />
             </div>
           </fieldset>
@@ -97,18 +104,33 @@
               </li>
               <li>
                 <input
+                  id="custom"
                   type="number"
                   name="custom"
                   aria-label="Custom tip percentage"
                   placeholder="Custom"
                   class="custom-tip [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+                  aria-describedby="custom-tip"
                 />
+              </li>
+              <li
+                id="custom-tip"
+                class="col-start-2 hidden text-[12px] text-orange-400"
+              >
+                Can't be less than zero
               </li>
             </ul>
           </fieldset>
 
           <fieldset class="fieldset-flex">
-            <label class="label" for="people-amount">Number of people</label>
+            <div class="flex items-center justify-between">
+              <label class="label" for="people-amount">Number of people</label>
+              <span
+                id="people-amount-error"
+                class="hidden text-[12px] text-orange-400"
+                >Can't be zero or less</span
+              >
+            </div>
             <div
               class="input-wrapper before:bg-[url('/images/icon-person.svg')]"
             >
@@ -118,6 +140,8 @@
                 name="people-amount"
                 id="people-amount"
                 placeholder="0"
+                aria-invalid="false"
+                aria-describedby="people-amount-error"
               />
             </div>
           </fieldset>
@@ -158,7 +182,7 @@
 
     <footer class="text-center">
       <p>
-        Author
+        Frontend Mentor Challenge. Coded by
         <a
           class="font-bold underline hover:text-green-400"
           href="https://github.com/kirilenko-a"
