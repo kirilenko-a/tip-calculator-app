@@ -1,6 +1,6 @@
 import { getInputError } from "./validation.js";
-
 const inputs = document.querySelectorAll("input");
+const tipButtons = document.querySelectorAll(".tip-button");
 
 const updateInputError = (input, errorMessage) => {
   const hasError = errorMessage !== null;
@@ -15,5 +15,17 @@ inputs.forEach((input) => {
     const errorMessage = getInputError(input);
 
     updateInputError(input, errorMessage);
+  });
+});
+
+tipButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    tipButtons.forEach((tip) => {
+      tip.classList.remove("active-tip-button");
+      tip.ariaPressed = "false";
+    });
+
+    button.classList.add("active-tip-button");
+    button.ariaPressed = "true";
   });
 });
