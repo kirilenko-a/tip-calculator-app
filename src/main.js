@@ -1,29 +1,19 @@
-const isInputValid = (input) => {
-  const value = Number(input.value);
-  const inputName = input.name;
+import { getInputError } from "./validation.js";
 
-  if (input.validity.badInput) {
-    return false;
-  }
+const inputs = document.querySelectorAll("input");
 
-  if (input.value === "") {
-    return true;
-  }
-
-  if (inputName === "bill" && value <= 0) {
-    return false;
-  }
-
-  if (inputName === "custom" && (value < 0 || value > 100)) {
-    return false;
-  }
-
-  if (
-    inputName === "people-amount" &&
-    (value <= 0 || !Number.isInteger(value))
-  ) {
-    return false;
-  }
-
-  return true;
+const updateInputError = (input, errorMessage) => {
+  const hasError = errorMessage !== null;
+  input.classList.toggle("input-error", hasError);
+  input.ariaInvalid = String(hasError);
+  input.ariaDescribedByElements[0].classList.toggle("hidden", !hasError);
+  input.ariaDescribedByElements[0].textContent = errorMessage ?? "";
 };
+
+inputs.forEach((input) => {
+  input.addEventListener("input", () => {
+    const errorMessage = getInputError(input);
+
+    updateInputError(input, errorMessage);
+  });
+});
