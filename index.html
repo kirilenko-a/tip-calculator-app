@@ -103,21 +103,21 @@
                 </button>
               </li>
               <li>
-                <input
-                  id="custom"
-                  type="number"
-                  name="custom"
-                  aria-label="Custom tip percentage"
-                  placeholder="Custom"
-                  class="custom-tip [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
-                  aria-describedby="custom-tip"
-                />
-              </li>
-              <li
-                id="custom-tip"
-                class="col-start-2 hidden text-[12px] text-orange-400"
-              >
-                Can't be less than zero
+                <div class="text-right">
+                  <input
+                    id="custom"
+                    type="number"
+                    name="custom"
+                    aria-label="Custom tip percentage"
+                    placeholder="Custom"
+                    class="custom-tip [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+                    aria-describedby="custom-tip"
+                  />
+                  <span
+                    id="custom-tip"
+                    class="col-start-2 hidden text-[12px] text-orange-400"
+                  ></span>
+                </div>
               </li>
             </ul>
           </fieldset>
