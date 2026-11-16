@@ -91,6 +91,7 @@
   font-weight: 700;
   color: var(--color-green-900);
   outline-color: var(--color-green-400);
+  border: 2px solid transparent;
 
   &::-webkit-inner-spin-button,
   &::-webkit-outer-spin-button {
