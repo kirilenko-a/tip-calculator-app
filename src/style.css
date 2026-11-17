@@ -138,3 +138,11 @@
   outline-color: var(--color-orange-400);
   border: 2px solid var(--color-orange-400);
 }
+
+@utility reset-button {
+  background-color: var(--color-green-400);
+
+  &:hover {
+    background-color: var(--color-green-200);
+  }
+}
