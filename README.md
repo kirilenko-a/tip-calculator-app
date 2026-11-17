@@ -4,7 +4,7 @@ A responsive Tip calculator app built as part of a Frontend Mentor challenge.
 
 ![Page preview](public/images/screenshot.png)
 
-- Live: [GitHub Pages](<>)
+- Live: [GitHub Pages](https://kirilenko-a.github.io/tip-calculator-app/)
 - Code: [GitHub](https://github.com/kirilenko-a/tip-calculator-app)
 
 ## Built with
