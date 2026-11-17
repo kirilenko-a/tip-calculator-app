@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/tip-calculator-app/images/favicon-32x32.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Tip calculator app</title>
+    <script type="module" crossorigin src="/tip-calculator-app/assets/index-BIIjkKy0.js"></script>
+    <link rel="stylesheet" crossorigin href="/tip-calculator-app/assets/index-B39j9exp.css">
+  </head>
+  <body class="font-main bg-grey-200 flex min-h-screen flex-col">
+    <div
+      class="flex flex-1 flex-col items-center justify-center md:gap-10 xl:gap-22"
+    >
+      <header class="pt-12.5 pb-10 md:pt-12.5 md:pb-0 xl:p-0">
+        <img src="/tip-calculator-app/images/logo.svg" alt="Splitter logo" />
+      </header>
+
+      <main
+        class="grid w-full flex-1 gap-8 rounded-t-[25px] bg-white px-6 py-8.5 md:max-w-152 md:flex-none md:gap-10 md:rounded-[25px] md:px-[75.5px] md:py-13.5 xl:max-w-230 xl:grid-cols-2 xl:gap-12 xl:px-10 xl:py-8"
+      >
+        <form id="form" class="flex flex-col gap-8 md:gap-6">
+          <fieldset class="fieldset-flex">
+            <div class="flex items-center justify-between">
+              <label class="label" for="bill">Bill</label>
+              <span id="bill-error" class="hidden text-[12px] text-orange-400"
+                >Can't be zero or less</span
+              >
+            </div>
+            <div
+              class="input-wrapper before:bg-[url('/images/icon-dollar.svg')]"
+            >
+              <input
+                class="info-input"
+                type="number"
+                name="bill"
+                id="bill"
+                placeholder="0"
+                aria-invalid="false"
+                aria-describedby="bill-error"
+              />
+            </div>
+          </fieldset>
+
+          <fieldset class="fieldset-flex">
+            <legend class="label mb-2">Select Tip %</legend>
+
+            <ul class="grid grid-cols-2 gap-4" id="tip">
+              <li>
+                <button
+                  class="tip-button tip-btn-hover"
+                  type="button"
+                  aria-pressed="false"
+                  value="5"
+                >
+                  5%
+                </button>
+              </li>
+              <li>
+                <button
+                  class="tip-button tip-btn-hover"
+                  type="button"
+                  aria-pressed="false"
+                  value="10"
+                >
+                  10%
+                </button>
+              </li>
+              <li>
+                <button
+                  class="tip-button tip-btn-hover"
+                  type="button"
+                  aria-pressed="false"
+                  value="15"
+                >
+                  15%
+                </button>
+              </li>
+              <li>
+                <button
+                  class="tip-button tip-btn-hover"
+                  type="button"
+                  aria-pressed="false"
+                  value="25"
+                >
+                  25%
+                </button>
+              </li>
+              <li>
+                <button
+                  class="tip-button tip-btn-hover"
+                  type="button"
+                  aria-pressed="false"
+                  value="50"
+                >
+                  50%
+                </button>
+              </li>
+              <li>
+                <div class="text-center">
+                  <input
+                    id="custom"
+                    type="number"
+                    name="custom"
+                    aria-label="Custom tip percentage"
+                    placeholder="Custom"
+                    class="custom-tip [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+                    aria-describedby="custom-tip"
+                  />
+                  <span
+                    id="custom-tip"
+                    class="col-start-2 hidden text-[12px] text-orange-400"
+                  ></span>
+                </div>
+              </li>
+            </ul>
+          </fieldset>
+
+          <fieldset class="fieldset-flex">
+            <div class="flex items-center justify-between">
+              <label class="label" for="people-amount">Number of people</label>
+              <span
+                id="people-amount-error"
+                class="hidden text-[12px] text-orange-400"
+                >Can't be zero or less</span
+              >
+            </div>
+            <div
+              class="input-wrapper before:bg-[url('/images/icon-person.svg')]"
+            >
+              <input
+                class="info-input"
+                type="number"
+                name="people-amount"
+                id="people-amount"
+                placeholder="0"
+                aria-invalid="false"
+                aria-describedby="people-amount-error"
+              />
+            </div>
+          </fieldset>
+        </form>
+
+        <section
+          class="flex flex-col gap-8 rounded-[15px] bg-green-900 px-5.75 py-[29.5px] md:px-[47.5px] md:py-10.75 xl:justify-between xl:px-10 xl:py-[37.5px]"
+        >
+          <div class="flex flex-col gap-6">
+            <div class="summary-wrapper">
+              <p class="flex flex-col">
+                <span class="text-amount-summary">Tip Amount</span>
+                <span class="text-per-person">/ person</span>
+              </p>
+              <p id="tip-amount" class="amount-summary">$0.00</p>
+            </div>
+
+            <div class="summary-wrapper">
+              <p class="flex flex-col">
+                <span class="text-amount-summary">Total</span>
+                <span class="text-per-person">/ person</span>
+              </p>
+              <p id="total-amount" class="amount-summary">$0.00</p>
+            </div>
+          </div>
+
+          <button
+            id="reset-button"
+            type="reset"
+            form="form"
+            class="bg-green-750 w-full cursor-pointer rounded-[5px] py-2.25 font-bold text-green-800 hover:bg-green-400 active:bg-green-200"
+          >
+            RESET
+          </button>
+        </section>
+      </main>
+    </div>
+
+    <footer class="text-center">
+      <p>
+        Frontend Mentor Challenge. Coded by
+        <a
+          class="font-bold underline hover:text-green-400"
+          href="https://github.com/kirilenko-a"
+          target="_blank"
+          >Artem Kirilenko</a
+        >
+      </p>
+    </footer>
+  </body>
+</html>
