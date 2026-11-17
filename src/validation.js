@@ -6,6 +6,12 @@ const errors = {
   noError: null,
 };
 
+import { getTipPercentage } from "./calculations.js";
+
+const customInput = document.getElementById("custom");
+const bill = document.getElementById("bill");
+const people = document.getElementById("people-amount");
+
 export const getInputError = (input) => {
   const value = Number(input.value);
   const inputName = input.name;
@@ -42,4 +48,16 @@ export const getInputError = (input) => {
   }
 
   return errors.noError;
+};
+
+export const isInputValid = (input) => {
+  return input.value !== "" && !input.classList.contains("input-error");
+};
+
+export const isReadyToCalculate = () => {
+  return (
+    isInputValid(bill) &&
+    isInputValid(people) &&
+    getTipPercentage(customInput) !== null
+  );
 };

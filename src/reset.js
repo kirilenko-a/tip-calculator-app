@@ -1,4 +1,6 @@
 import { updateInputError } from "./update.js";
+import { tipAmount } from "./update.js";
+import { totalAmount } from "./update.js";
 
 export const tipButtons = document.querySelectorAll(".tip-button");
 const inputs = document.querySelectorAll("input");
@@ -23,4 +25,7 @@ form.addEventListener("reset", () => {
   inputs.forEach((input) => {
     updateInputError(input, null);
   });
+
+  tipAmount.textContent = `$0.00`;
+  totalAmount.textContent = `$0.00`;
 });
